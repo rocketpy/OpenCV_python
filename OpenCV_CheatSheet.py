@@ -1,4 +1,6 @@
-#  importing an image and viewing
+#  Good example at bellow !
+
+#  Importing an image and viewing
 import cv2
 
 
@@ -41,4 +43,31 @@ resized = cv2.resize(img, dimen, interpolation = cv2.INTER_AREA)
 view_image(resized, "Result after resizing with 20%")
 
 
-
+#  Example , with path and directories
+import os
+import cv2  
+  
+    
+# image path
+image_path = r'C:\Users\Rajnish\Desktop\GeeksforGeeks\geeks.png' 
+# image directory
+directory = r'C:\Users\Rajnish\Desktop\GeeksforGeeks'  
+  
+img = cv2.imread(image_path) 
+  
+# change the current directory to specified directory  
+os.chdir(directory) 
+  
+# files and directories in 'C:/Users/...'   
+print("Before saving image: ")   
+print(os.listdir(directory))   
+  
+filename = 'saved_image.jpg'
+# saving the image 
+cv2.imwrite(filename, img) 
+  
+# files and directories in 'C:/Users/...'   
+print("After saving image: ")   
+print(os.listdir(directory)) 
+print('Successfully saved !') 
+ 
