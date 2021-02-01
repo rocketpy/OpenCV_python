@@ -7,6 +7,10 @@ cv2.imshow("Image", image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
+#  Saving the image
+image = cv2.imread("file_name or Path to file")
+cv2.imwrite("file_name", image)
+
 
 #  IMPORTANT
 # On reading images this way via openCV, it isn’t in RGB colorspace—it’s in BGR !!!
@@ -28,10 +32,13 @@ view_image(cropped, "Image after cropping")
 
 
 #  Resizing
+#  for more info:   https://www.tutorialkart.com/opencv/python/opencv-python-resize-image/
 percent = 20  # percent of original size
 width = int(img.shape[1] * percent / 100)
 height = int(img.shape[0] * percent / 100)
 dimen = (width, height)
 resized = cv2.resize(img, dimen, interpolation = cv2.INTER_AREA)
 view_image(resized, "Result after resizing with 20%")
+
+
 
