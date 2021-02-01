@@ -20,3 +20,18 @@ def view_image(image, name_of_window):
     cv2.waitKey(0)
     cv2.destroyAllWindows()
  
+
+#  Cropping
+cropped = image[10:500, 500:2000]
+view_image(cropped, "Image after cropping")
+#  image[10:500, 500:2000] is image[y:y+h, x:x+w]
+
+
+#  Resizing
+percent = 20  # percent of original size
+width = int(img.shape[1] * percent / 100)
+height = int(img.shape[0] * percent / 100)
+dimen = (width, height)
+resized = cv2.resize(img, dimen, interpolation = cv2.INTER_AREA)
+view_image(resized, "Result after resizing with 20%")
+
