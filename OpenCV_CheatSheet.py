@@ -43,6 +43,14 @@ resized = cv2.resize(img, dimen, interpolation = cv2.INTER_AREA)
 view_image(resized, "Result after resizing with 20%")
 
 
+#  Rotating
+(h, w, d) = image.shape
+center = (w // 2, h // 2)
+MATRIX = cv2.getRotationMatrix2D(center, 180, 1.0)
+rotated = cv2.warpAffine(image, MATRIX, (w, h))
+view_image(rotated, "Image after rotation")
+
+
 #  Example , with path and directories
 import os
 import cv2  
