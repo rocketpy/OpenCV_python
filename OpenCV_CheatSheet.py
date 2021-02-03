@@ -52,10 +52,31 @@ view_image(rotated, "Image after rotation")
 
 
 #  Grayscaling and Thresholding it's a black & white effects
-gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-ret, threshold_image = cv2.threshold(im, 127, 255, 0)
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  # it's a grayscale one-channel version 
+ret, threshold_image = cv2.threshold(im, 127, 255, 0)  # threshold made darker (smaller) than 127 to 0 and all brighter (greater) to 255
 view_image(gray_image, "Image in gray-scale")
 view_image(threshold_image, "Black & White image")
+#  ret, threshold = cv2.threshold(im, 150, 200, 10)  # shades be a smaller than 150 to 10 and all greater to 200
+
+
+#  Writing some text on an image
+result = image.copy()
+cv2.putText(result, "Write here any ...", (1500, 3600), cv2.FONT_HERSHEY_SIMPLEX, 15, (30, 105, 210), 40) 
+view_image(output, "New image with some text")
+
+
+#  Drawing a rectangle on an image
+result = image.copy()
+cv2.rectangle(result, (2600, 800), (4100, 2400), (0, 255, 255), 10)
+view_image(result, "New image with a rectangle") 
+"""
+The rectangle function takes 5 parameters:
+    The first parameter is the image.
+    The second parameter is x1, y1 — Top Left Corner.
+    The third parameter is x2, y2 — Bottom Right Corner.
+    The fourth parameter is the rectangle color (GBR/RGB, depending on how you imported your image).
+    The fifth parameter is the rectangle line thickness.
+"""
 
 
 #  Example , with path and directories
