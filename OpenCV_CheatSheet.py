@@ -51,6 +51,13 @@ rotated = cv2.warpAffine(image, MATRIX, (w, h))
 view_image(rotated, "Image after rotation")
 
 
+#  Grayscaling and Thresholding it's a black & white effects
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+ret, threshold_image = cv2.threshold(im, 127, 255, 0)
+view_image(gray_image, "Image in gray-scale")
+view_image(threshold_image, "Black & White image")
+
+
 #  Example , with path and directories
 import os
 import cv2  
