@@ -82,6 +82,18 @@ The rectangle function takes 5 parameters:
     The fourth parameter is the rectangle color (GBR/RGB, depending on how you imported your image).
     The fifth parameter is the rectangle line thickness.
 """
+ 
+    
+#  Using transpose() method , like rotate
+import cv2 
+  
+
+path = r'C:\Users\user\Desktop\image_name.png'
+img = cv2.imread(path) 
+window_name = 'Image' 
+trans_image = cv2.transpose(img) 
+cv2.imshow(window_name, trans_image) 
+cv2.waitKey(0) 
 
 
 #  Example , with path and directories
