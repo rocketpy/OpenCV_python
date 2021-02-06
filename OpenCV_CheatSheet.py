@@ -65,6 +65,11 @@ cv2.putText(result, "Write here any ...", (1500, 3600), cv2.FONT_HERSHEY_SIMPLEX
 view_image(output, "New image with some text")
 
 
+#  Blurring or Smoothing
+blurred_img = cv2.GaussianBlur(image, (51, 51), 0)
+view_image(blurred_img, "Blurred image")
+
+
 #  Drawing a rectangle on an image
 result = image.copy()
 cv2.rectangle(result, (2600, 800), (4100, 2400), (0, 255, 255), 10)
