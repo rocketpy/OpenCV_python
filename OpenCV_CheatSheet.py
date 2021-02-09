@@ -5,6 +5,9 @@ import cv2
 
 
 image = cv2.imread("file_name")  # or path to file 
+# print(img.shape)
+# print(img.size) # pixels
+# print(img.dtype)
 cv2.imshow("Image", image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
@@ -94,6 +97,20 @@ window_name = 'Image'
 trans_image = cv2.transpose(img) 
 cv2.imshow(window_name, trans_image) 
 cv2.waitKey(0) 
+
+
+"""
+img = cv2.imread('img_name.jpg', -1)
+b, g, r = cv2.split(img)  # change to BGR
+img = cv2.merge((b, g, r))
+
+crop_field = img[100:25, 300:450]  # take a some field of image
+
+cv2.imshow('Image', img)
+# cv2.imshow('Some_field', crop_field)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+"""
 
 
 #  Example , with path and directories
