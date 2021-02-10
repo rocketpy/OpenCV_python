@@ -85,6 +85,21 @@ The rectangle function takes 5 parameters:
     The fourth parameter is the rectangle color (GBR/RGB, depending on how you imported your image).
     The fifth parameter is the rectangle line thickness.
 """
+
+#  Subtraction a background
+import numpy as np
+import cv2 as cv
+
+
+cap = cv.VideoCapture('video.mp4')
+fgbg = cv.createBackgroundSubtractorMOG2()
+
+while True:
+    ret, frame = cap.read()
+    if frame is None:
+        break
+
+    fgmask = fgbg.apply(frame)
  
     
 #  Using transpose() method , like rotate
