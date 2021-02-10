@@ -100,6 +100,16 @@ while True:
         break
 
     fgmask = fgbg.apply(frame)
+    
+    cv.imshow('Frame', frame)
+    cv.imshow('FG MASK frame', fgmask)
+
+    keyboard = cv.waitKey(30)
+    if keyboard == 'q' or keyboard == 27:
+        break
+
+cap.release()
+cv.destroyAllWindows()    
  
     
 #  Using transpose() method , like rotate
