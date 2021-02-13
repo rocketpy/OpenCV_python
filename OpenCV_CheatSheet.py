@@ -156,6 +156,19 @@ bitXOR = cv2.bitwise_xor(img2, img1)
 bitNot1 = cv2.bitwise_not(img1)
 bitNot2 = cv2.bitwise_not(img2)
 
+cv2.imshow('img1', img1)
+cv2.imshow('img2', img2)
+
+cv2.imshow('bitAnd', bitAnd)
+cv2.imshow('bitOr', bitOr)
+cv2.imshow('bitXOR', bitXOR)
+
+cv2.imshow('bitNot1', bitNot1)
+cv2.imshow('bitNot2', bitNot2)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+
 
 #  Example , with path and directories
 import os
