@@ -62,4 +62,44 @@ for frame in manager_cv2:
 cv2.destroyAllWindows()
 
 
+#  SelectorCV2
+"""
+Firstly create a SelectorCV2 object. You can pass it optional parameters to configure the output.
 
+from cv2_tools.Selection import SelectorCV2
+selector = SelectorCV2(color=(200,90,0), filled=True)
+
+Also you can configure it later using the method (all optional parameters):
+
+selector.set_properties()
+
+Now, each time you want to add a selected zone call the method:
+
+Coordinates:
+
+(x1,y1)____(x2,y1)
+   |          |
+   |          |
+(x1,y2)____(x2,y2)
+
+Tags (optional parameter):
+* It could be a normal string
+* A string with '\n'
+* A list of strings
+* None / '' / [] / False
+
+selector.add_zone((x1,y1,x2,y2),tags=tag)
+
+Finally, when you want to draw all the rectangles execute:
+
+edited_frame = selector.draw(frame)
+
+If you want to use the same object multiple times you can easily change the content inside it:
+
+# This method could help change rectangles to
+selector.set_range_valid_rectangles( origin, destination)
+
+# This method could help if you know exactly the indexes that you want to keep
+# Default = [], so if you just want to clean the buffer call this method without parameters
+set_valid_rectangles(indexes)
+"""
