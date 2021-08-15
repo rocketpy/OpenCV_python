@@ -32,3 +32,28 @@ ax.imshow(flowpy.flow_to_rgb(flow))
 plt.show()
 
 
+# Plotting arrows, showing flow values and a calibration pattern
+
+# Flowpy comes with more than just RGB plots, the main features here are: - Arrows to quickly visualize the flow - 
+# The flow values below cursor showing in the tooltips - A calibration pattern side by side as a legend for your graph
+
+
+flow = flowpy.flow_read("tests/data/Dimetrodon.flo")
+height, width, _ = flow.shape
+
+image_ratio = height / width
+max_radius = flowpy.get_flow_max_radius(flow)
+
+fig, (ax_1, ax_2) = plt.subplots(
+    1, 2, gridspec_kw={"width_ratios": [1, image_ratio]}
+)
+
+ax_1.imshow(flowpy.flow_to_rgb(flow))
+flowpy.attach_arrows(ax_1, flow)
+flowpy.attach_coord(ax_1, flow)
+
+flowpy.attach_calibration_pattern(ax_2, flow_max_radius=max_radius)
+
+plt.show()
+
+
