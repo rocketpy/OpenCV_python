@@ -12,5 +12,14 @@ if hash_1 - hash_2 < cutoff:
   print('Images are similar')
 else:
   print('Images are not similar')
- 
+
+
+#  without openCV
+import numpy as np
+
+
+pic_1 = np.random.rand(100, 100)
+pic_2 = np.random.rand(100, 100)
+pic_1_norm = pic_1/np.sqrt(np.sum(picture1**2))
+pic_2_norm = pic_2/np.sqrt(np.sum(picture2**2))
 
