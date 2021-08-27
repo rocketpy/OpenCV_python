@@ -31,4 +31,29 @@ print(np.sum(pic_1_norm**2))
 # If they aren't similar, we'll get a value between 0 and 1 (a percentage if you multiply by 100)
 print(np.sum(pic_2_norm*pic_1_norm))
 # result: 0.82362519392365335
- 
+
+
+# With OpenCV
+import cv2
+  
+     
+# test image
+image = cv2.imread('cat.jpg')
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+histogram = cv2.calcHist([gray_image], [0],
+                         None, [256], [0, 256])
+  
+# data1 image
+image = cv2.imread('cat.jpeg')
+gray_image1 = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+histogram1 = cv2.calcHist([gray_image1], [0],
+                          None, [256], [0, 256])
+  
+# data2 image
+image = cv2.imread('food.jpeg')
+gray_image2 = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+histogram2 = cv2.calcHist([gray_image2], [0],
+                          None, [256], [0, 256])
+  
+  
+
