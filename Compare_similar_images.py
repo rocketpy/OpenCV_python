@@ -79,3 +79,15 @@ else:
     print("image_2.jpg is more similar to test.jpg as compare to image_1.jpg")
   
   
+  
+# Some example using 'Mean Squared Error'
+import cv2
+import numpy as np
+import matplotlib.pyplot as plt
+from skimage.metrics import structural_similarity as ssim
+
+
+def mse(imageA, imageB):
+    err = np.sum((imageA.astype("float") - imageB.astype("float")) ** 2)
+	  err /= float(imageA.shape[0] * imageA.shape[1])
+	  return err
